@@ -1,0 +1,19 @@
+/*===================TASK 13|2|=======================*/
+body {
+    background-color: rgb(134, 68, 21);
+    background-image: url(images/cafe.jpg);
+    background-repeat: no-repeat;
+  }
+  h1 {
+      font-family: cursive;
+      font-size: 100px;
+      font-weight: bold;
+      text-align: center;
+  }
+  h2 {
+    font-family: cursive;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+  }
+  /*===================THE END=======================*/

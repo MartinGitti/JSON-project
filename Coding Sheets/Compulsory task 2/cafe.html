@@ -1,0 +1,87 @@
+<!--==============================================================TASK 13|2|===================================================================-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="cafe.css">
+</head>
+<!-- All Javascript coding is found within the body of the HTML page.-->
+<body>
+  <H1>Thank You for your valued support!</H1>
+    <h2>Your order is on it's way!</h2>
+  <script type="text/javascript">
+    // Cafe Drinks object created with price values.
+    let cafeDrinks = {
+      "Filter Coffee": 20,
+      "Cappuccino": 25,
+      "Hot Chocolate": 30,
+      "Red Cappuccino": 30,
+      "Tea": 15
+    };
+
+    // Cafe Food object created with price values.
+    let cafeFood = {
+      "Eggs Benedict": 45,
+      "Breakfast Pizza": 35,
+      "Muesli and Yogurt": 30,
+      "Scone with Jam": 15,
+      "Toasted Sandwich": 25,
+    };
+
+    // Drinks function below to promt user to enter their chosen option from the menu provided.
+    let drinkTotal = 0;
+    // Drinks Menu:
+    function cafeMenu1() {
+      let inputDrink = prompt("Good day, what drink would you like to order?, available on menu today: " + Object.getOwnPropertyNames(cafeDrinks));
+      // If option is entered correctly in the prompt box, alert message with thank user for the order and specify the bill amount.
+      if (Object.getOwnPropertyNames(cafeDrinks).includes(inputDrink)) {
+        drinkTotal += cafeDrinks[inputDrink];
+        alert("Thank you for your order! Your drink amounts to R" + drinkTotal);
+      // If user enters option incorrectly, this following alert message will appear.
+      } else if (inputDrink !== Object.getOwnPropertyNames(cafeDrinks)) {
+        alert("Please re-type the drink option in the input box exactly as it appears on the menu.");
+        prompt("The box is case sensitive, please type your order exactly as it appears on the menu. " + Object.getOwnPropertyNames(cafeDrinks));
+      }
+    }
+    cafeMenu1();
+
+    // Food function below.
+    let foodTotal = 0;
+    // Food options are provided in prompt box.
+    function cafeMenu2() {
+      let inputFood = prompt("Good drink choice, would you like to order a breakfast meal to go with your drink?, food menu: " + Object.getOwnPropertyNames(cafeFood));
+      // If order option is correctly entered, the following will appear.
+      if (Object.getOwnPropertyNames(cafeFood).includes(inputFood)) {
+        foodTotal += cafeFood[inputFood];
+        alert("Thank you for your order! Your new total amounts to R" + (drinkTotal + foodTotal));
+      // Else, this alert message will appear and prompt user to enter option details correctly.
+      } else if (inputFood !== Object.getOwnPropertyNames(cafeFood)) {
+        alert("Please re-type the food option in the input box exactly as it appears on the menu.");
+        prompt("The box is case sensitive, please type your order exactly as it appears on the menu. " + Object.getOwnPropertyNames(cafeFood));
+      }
+    }
+    cafeMenu2();
+    // Bill total calculated depending on what user has ordered. Price values are above in drink and food objects.
+    let billTotal = (drinkTotal + foodTotal);
+    // Function below to prompt user for a tip.+
+    function tipContribution() {
+      let inputTip = prompt("Would you like to add a small contribution towards our service? If so, please specify the amount you would like to tip, otherwise type '0'.");
+      // Calculation to add tip, if any to bill.("input" changed from string to number).
+      let result = billTotal + Number(inputTip);
+      // If tip input is greater than "0", following alert will appear.
+      if (inputTip > 0) {
+        alert("Thank you for your generous tip, it is very much appreciated! Your bill totals to R" + billTotal + " + a tip of " + "R" + inputTip + " which = R" + result + ". We hope to see you again soon.");
+      // If tip input is "0", following alert will appear.
+      } else if (inputTip == 0) {
+        alert("Thank you for your order, your bill amounts to R" + billTotal + ", have a wonderful day! We hope to see you back soon.");
+      }
+    }
+    tipContribution();
+  </script>
+</body>
+
+</html>
+<!--==============================================================THE END===================================================================-->

@@ -1,0 +1,67 @@
+<!-- =====================================TASK 13|1|============================================ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="musicPage.css">
+    <title>Document</title>
+</head>
+
+<body onload="loadPage()">
+    <form>
+        <h1>We Love Music</h1>
+        <h2>Share the passion, save your favorites!</h2>
+
+        <ul class="alignList">
+            <li><label for="firstName">Enter artist's first name: </label></li>
+            <li><input type="text" name="firstName" id="firstName" required></li>
+
+            <li><label for="lastName">Enter artist's last name: </label></li>
+            <li><input type="text" name="lastName" id="lastName" required></li>
+
+            <li><label for="year">Enter the year that the music track was recorded:</label></li>
+            <li><input type="text" name="year" id="year"></li>
+
+            <li><label for="title">Enter the title of the music track: </label></li>
+            <li><input type="text" name="title" id="title"></li>
+
+            <li><label for="album">Enter the album name of the music track: </label></li>
+            <li><input type="text" name="album" id="album"></li>
+
+            <li><label for="genre">What music genre does the track belong to? </label></li>
+            <li><input type="text" name="genre" id="genre"></li>
+
+            <li><label for="gender">Is the artist male or female?</label></li>
+            <li><select id="gender">
+                    <option value="">--Select Gender of artist--</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </li>
+            <p>When you click the button below, you will note that all the above details will be stored into a select
+                list, once you select one of the stored options, an alert will appear with all the relevant details.</p>
+            <button onclick="addArtist()">Add your favorite music tracks by clicking this button:</button>
+            <select id="inputInfo" onchange="ChangeActiveUser(this.value)">
+                <option value="">--Please choose a music track below--</option>
+            </select>
+        </ul>
+        <p><b>"Add" Button:</b> Type something in the box provided below and then click the "add" button to display it
+            in a list format on the page.</p>
+        <p><b>"Edit"" Button:</b> With the "edit" button please select something from the list that you created with the
+            "add" button first, edit it and then click the edit button in order for it to change.</p>
+        <p><b>"Delete" Button:</b> Please select something from the list that you created and then click the "delete"
+            button in order for the option to be removed.</p>
+        <input type="text" id="textBox">
+        <button onclick="addToList()">Add</button>
+        <button onclick="editListValue()">Edit</button>
+        <button onclick="deleteFromList()">Delete</button>
+
+        <ul id="list"></ul>
+    </form>
+    <script src="musicPage.js"></script>
+</body>
+
+</html>
+<!-- =====================================THE TASK============================================ -->
